@@ -74,8 +74,7 @@ var me=null,NAV=[['home','Visão geral'],['menu','Catálogo'],['combo','Combos']
 var ST=['Novo','Preparo','Pronto','Entregue','Cancelado'];
 var S,V='home',Q='',C='',LIM=40,OF='';
 function load(){try{S=JSON.parse(localStorage.getItem('dv_admin'))}catch(e){}
- if(!S||!S.items)S={cats:SEED.cats,items:SEED.items,open:true,cfg:{wa:'5594981166051',addr:'Rua Pará, 381 · Dom Eliseu – PA',hours:'Seg a Sáb · 09:00 às 23:30',mail:'domvinho.dom@outlook.com'},orders:[
- {id:3,n:'Mesa 4',t:'Mesa',i:'Costelão, 2 Heineken',v:140.9,s:'Preparo',h:Date.now()-18e5},{id:2,n:'Marcos',t:'Retirada',i:'Tábua de Frios média, Mayos Malbec',v:75,s:'Novo',h:Date.now()-6e5},{id:1,n:'Mesa 1',t:'Mesa',i:'Lasanha 2 pessoas, Suco de laranja',v:62,s:'Entregue',h:Date.now()-72e5}]}}
+ if(!S||!S.items)S={cats:SEED.cats,items:SEED.items,open:true,cfg:{wa:'5594981166051',addr:'Rua Pará, 381 · Dom Eliseu – PA',hours:'Seg a Sáb · 09:00 às 23:30',mail:'domvinho.dom@outlook.com'},orders:[]}}
 function norm(){S.log=S.log||[];S.rev|=0;S.pub|=0;if(!S.cats.some(function(c){return c.k==='combos'}))S.cats.unshift({k:'combos',n:'Combos',s:'Economize combinando'})}
 function save(){try{localStorage.setItem('dv_admin',JSON.stringify(S))}catch(e){}}
 var $=function(i){return document.getElementById(i)},esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
