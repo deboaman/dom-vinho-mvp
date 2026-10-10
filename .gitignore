@@ -1,6 +1,7 @@
-.DS_Store
 *.bak
 *.log
+.DS_Store
+.backups/
 .env
 .env.*
 node_modules/
